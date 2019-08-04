@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" >Todo App</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <h1 class="text-center ">Todo List</h1>
+      <div class="input-group-prepend">
+        <input type="text" #todo class="form-control" placeholder="Add Todo" name="todo" ngModel>
+        <span class="input-group-text" (click)="addTodO(todo.value)" > <i class="material-icons">add</i></span>
+      </div>
+    </div>
+    <div class="data">
+      <ul class="list-unstyled">
+        <li *ngFor="let todo of todoArr">{{todo}}
+          <i (click)="deleteItem(todo)" class="material-icons">delete</i></li>
+      </ul>
+    </div>
+  </form>
+</div>
+
+<router-outlet></router-outlet>
